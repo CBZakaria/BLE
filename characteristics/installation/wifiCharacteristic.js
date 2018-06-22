@@ -16,7 +16,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
             ]
         });
         this._message = new Buffer(0); // ?
-        this._updateMessageCallback();
+        this._updateMessageCallback = null;
     }
     onWriteRequest(data, offset, withoutResponse, callback) {
         this._message = data;

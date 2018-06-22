@@ -1,4 +1,3 @@
-var bleno = require('bleno');
 var RPIService = require('./characteristics/rpiService');
 
 var service = new RPIService();
