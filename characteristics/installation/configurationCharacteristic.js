@@ -15,7 +15,7 @@ class ConfigurationCharacterstic extends BlenoCharacteristic {
                 })
             ]
         });
-        this._message = new Message(); // ?
+        this._message = new Buffer(0); // ?
         this._updateMessageCallback = null;
     }
 

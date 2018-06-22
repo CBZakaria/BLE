@@ -5,7 +5,6 @@ var BlenoPrimaryService = bleno.PrimaryService;
 var WifiCharacteristic = require('./installation/wifiCharacteristic');
 var ConfigurationCharacterstic = require('./installation/configurationCharacteristic');
 var PlayerCharacteristic = require('./maintaining/playerCharacterstic');
-
 class RPIService extends BlenoPrimaryService {
     constructor(){
         super({
