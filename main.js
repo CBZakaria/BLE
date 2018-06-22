@@ -23,7 +23,7 @@ bleno.on('advertisingStart',function(err) {
         console.log('Advertising ...');
 
         bleno.setServices([
-            RPIService
+            service
         ]);
     }
 });
