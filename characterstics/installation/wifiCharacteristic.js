@@ -1,6 +1,6 @@
-var bleno = require('bleno');
+var bleno = require("bleno");
 
-var BlenoCharacteristic = bleno.Characteristic;
+var BlenoCharacaterstic = bleno.Characteristic;
 var BlenoDescriptor = bleno.Descriptor;
 
 class WifiCharacteristic extends BlenoCharacaterstic {
@@ -34,4 +34,4 @@ class WifiCharacteristic extends BlenoCharacaterstic {
     }
 }
 
-export default WifiCharacteristic;
+module.exports =  WifiCharacteristic;

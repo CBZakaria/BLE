@@ -16,4 +16,4 @@ class RPIService extends bleno.PrimaryService {
         });
     }
 } 
-export default RPIService;
+module.exports = RPIService;

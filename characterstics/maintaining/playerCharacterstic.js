@@ -35,4 +35,4 @@ class PlayerCharacteristic extends BlenoCharacteristic {
         this._updateMessageCallback = null;
     }
 }
-export default PlayerCharacteristic;
+module.exports = PlayerCharacteristic;

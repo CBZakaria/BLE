@@ -1,15 +1,15 @@
-import { Characteristic, Descriptor } from "bleno";
+var bleno = require('bleno');
 
-var BlenoCharacteristic = Characteristic;
-var BlenoDiscriptor = Descriptor;
+var BlenoCharacteristic = bleno.Characteristic;
+var BlenoDescriptor = bleno.Descriptor;
 
 class ConfigurationCharacterstic extends BlenoCharacteristic {
     constructor() {
         super({
-            uuid: '00010001-89BD-43C8-9231-40F6E305F96D',
+            uuid: '00010002-89BD-43C8-9231-40F6E305F96D',
             properties: ['write', 'notify'],
             descriptors: [
-                new BlenoDiscriptor({
+                new BlenoDescriptor({
                     uuid: '2901',
                     value: 'Configuration Characteristic'
                 })
@@ -36,4 +36,4 @@ class ConfigurationCharacterstic extends BlenoCharacteristic {
 }
 
 
-export default ConfigurationCharacterstic;
+module.exports =  ConfigurationCharacterstic;
