@@ -3,7 +3,7 @@ var bleno = require('bleno');
 var BlenoPrimaryService = bleno.PrimaryService;
 
 var WifiCharacteristic = require('./installation/wifiCharacteristic');
-var ConfigurationCharacteristic = require('./installation/configurationCharacteristic');
+var ConfigurationCharacteristic = require('./configurationCharacteristic');
 var PlayerCharacteristic = require('./maintaining/playerCharacteristic');
 
 
