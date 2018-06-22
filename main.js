@@ -1,6 +1,5 @@
-import bleno from "bleno";
-import RPIService from './characterstics/rpiService';
- 
+var bleno = require('bleno');
+var RPIService = require('./characterstics/rpiService')
 
 
 var name = "COMPANION-BLE"

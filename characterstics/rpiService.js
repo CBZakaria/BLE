@@ -1,14 +1,10 @@
-import {PrimaryService} from 'bleno';
+var bleno = require('bleno');
 
-import './installation/wifiCharacteristic';
-import './installation/configurationCharacteristic';
-import './maintaining/playerCharacterstic';
-import './maintaining/rpiCharacteristic';
-import WifiCharacteristic from './installation/wifiCharacteristic';
-import ConfigurationCharacterstic from './installation/configurationCharacteristic';
-import PlayerCharacteristic from './maintaining/rpiCharacteristic';
+var WifiCharacteristic = require('./installation/wifiCharacteristic');
+var ConfigurationCharacterstic = require('./installation/configurationCharacteristic');
+var PlayerCharacteristic = require('./maintaining/playerCharacterstic');
 
-class RPIService extends PrimaryService {
+class RPIService extends bleno.PrimaryService {
     constructor(){
         super({
             uuid: '00010010-89BD-43C8-9231-40F6E305F96D',

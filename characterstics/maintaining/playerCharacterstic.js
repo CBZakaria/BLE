@@ -1,7 +1,7 @@
-import {Characteristic, Descriptor} from 'bleno';
+var bleno = require('bleno');
 
-var BlenoCharacteristic = Characteristic;
-var BlenoDescriptor = Descriptor;
+var BlenoCharacteristic = bleno.Characteristic;
+var BlenoDescriptor = bleno.Descriptor;
 
 class PlayerCharacteristic extends BlenoCharacteristic {
     constructor(){
@@ -15,6 +15,24 @@ class PlayerCharacteristic extends BlenoCharacteristic {
                 })
             ]
         });
+
+        this._message = new MessageChannel();
+        this._updateMessageCallback = null;
+    }
+    
+    onWriteRequest(data, offset, withoutResponse, callback) {
+        this._message = data;
+        if(this._updateMessageCallback) {
+            this._updateMessageCallback(this._message);
+        }
+    }
+
+    onSubscribe(maxValuesize, updateMessageCallback) {
+        this._updateMessageCallback = updateMessageCallback;
+    }
+
+    onUnsubscribe() {
+        this._updateMessageCallback = null;
     }
 }
 export default PlayerCharacteristic;

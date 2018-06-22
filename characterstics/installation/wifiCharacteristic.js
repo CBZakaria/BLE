@@ -1,12 +1,12 @@
-import {Characteristic, Descriptor} from "bleno";
+var bleno = require('bleno');
 
-var BlenoCharacaterstic = Characteristic;
-var BlenoDescriptor = Descriptor;
+var BlenoCharacteristic = bleno.Characteristic;
+var BlenoDescriptor = bleno.Descriptor;
 
 class WifiCharacteristic extends BlenoCharacaterstic {
     constructor() {
         super({
-            uuid: '00010000-89BD-43C8-9231-40F6E305F96D',
+            uuid: '00010001-89BD-43C8-9231-40F6E305F96D',
             properties: ['write','notify'],
             descriptors: [
                 new BlenoDescriptor ({
@@ -15,6 +15,8 @@ class WifiCharacteristic extends BlenoCharacaterstic {
                 })
             ]
         });
+        this._message = new Message();
+        this._updateMessageCallback();
     }
     onWriteRequest(data, offset, withoutResponse, callback) {
         this._message = data;
