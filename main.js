@@ -1,12 +1,13 @@
 var bleno = require('bleno');
-var RPIService = require('./characterstics/rpiService')
+var RPIService = require('./characteristics/rpiService');
 
+var service = new RPIService();
 
 var name = "COMPANION-BLE"
-
-bleno.onStateChange(function(state) {
-    if ('powerdOn' === state) {
-        bleno.startAdvertising(name,[RPIService.uuid],function(err){
+console.log("Ello");
+bleno.on('stateChange',function(state) {
+    if ('poweredOn' === state) {
+        bleno.startAdvertising(name,[service.uuid],function(err){
             if (err) {
                 console.log(err);
             }
@@ -17,12 +18,14 @@ bleno.onStateChange(function(state) {
     }
 });
 
-bleno.onAdvertisingStart(function(err){
+bleno.on('advertisingStart',function(err) {
     if(!err) {
         console.log('Advertising ...');
-        
+
         bleno.setServices([
             RPIService
         ]);
     }
 });
+
+
