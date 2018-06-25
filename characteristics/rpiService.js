@@ -25,5 +25,5 @@ var ser = new RPIService().characteristics;
 var ser2 = ser.filter(ele => {
     ele === "00010002-89BD-43C8-9231-40F6E305F96D";
 });
-console.log("wtf " + ser.length);
+console.log("wtf " + ser2.length);
 module.exports = RPIService;
