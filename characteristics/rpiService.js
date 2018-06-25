@@ -22,6 +22,9 @@ class RPIService extends BlenoPrimaryService {
     }
 } 
 var ser = new RPIService();
-var ser2 = ser.characteristics[1].uuid;
-console.log("wtf " + ser2);
+var ser2 = ser.characteristics;
+ser2.filter(ele => {
+    ele.uuid === "0001000289BD43C8923140F6E305F96D";
+});
+console.log("wtf " + ser2.legnth);
 module.exports = RPIService;
