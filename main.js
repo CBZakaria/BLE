@@ -5,7 +5,7 @@ var service = new RPIService();
 
 var name = "COMPANION-BLE"
 console.log("Ello");
-console.log(service.uuid);
+console.log("uuid" +service.uuid);
 bleno.on('stateChange',function(state) {
     if ('poweredOn' === state) {
         bleno.startAdvertising(name,[service.uuid],function(err){
