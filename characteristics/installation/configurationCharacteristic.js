@@ -25,6 +25,7 @@ class ConfigurationCharacterstic extends BlenoCharacteristic {
         if(this._updateMessageCallback) {
             this._updateMessageCallback(this._message);
         }
+        callback(this.RESULT_SUCCESS);
     }
 
     onSubscribe(maxValuesize, updateMessageCallback) {
