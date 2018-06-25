@@ -24,7 +24,7 @@ bleno.on('advertisingStart',function(err) {
 
         bleno.setServices([service], function(err){
             console.log('setServices: ' + (err ? 'error' + err : 'success'));
-            console.log("uuid " +service.uuid);
+            console.log("Characteristic " +service.characteristics);
         });
     }
 });
