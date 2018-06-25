@@ -21,4 +21,5 @@ class RPIService extends BlenoPrimaryService {
         });
     }
 } 
+console.log("uuid " + wifiChara.uuid);
 module.exports = RPIService;
