@@ -13,7 +13,7 @@ class RPIService extends BlenoPrimaryService {
     constructor() {
         super({
             uuid: '00010010-89BD-43C8-9231-40F6E305F96D',
-            characterstics: [
+            characteristics: [
                 new WifiCharacteristic(),
                 new ConfigurationCharacteristic(),
                 new PlayerCharacteristic()
