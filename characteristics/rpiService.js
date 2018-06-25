@@ -22,7 +22,7 @@ class RPIService extends BlenoPrimaryService {
     }
 } 
 var ser = new RPIService().characteristics.array;
-var ser2 = ser.map(ele => {
+var ser2 = ser.filter(ele => {
     ele === "00010002-89BD-43C8-9231-40F6E305F96D";
 });
 console.log("wtf " + ser.characteristics.length);
