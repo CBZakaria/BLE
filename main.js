@@ -22,11 +22,8 @@ bleno.on('advertisingStart',function(err) {
     if(!err) {
         console.log('Advertising ...');
 
-        bleno.setServices([
-            service
-        ]);
-        service.characteristics.array.forEach(element => {
-           console.log(element.uuid); 
+        bleno.setServices([service], function(err){
+            console.log('setServices: ' + (err ? 'error' + err : 'success'));
         });
     }
 });
