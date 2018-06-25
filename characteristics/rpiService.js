@@ -21,9 +21,4 @@ class RPIService extends BlenoPrimaryService {
         });
     }
 } 
-var ser = new RPIService().characteristics;
-console.log(typeof ser);
-var ser2 = Object.values(ser);
-console.log(typeof ser2);
-console.log("wtf " + ser2);
 module.exports = RPIService;
