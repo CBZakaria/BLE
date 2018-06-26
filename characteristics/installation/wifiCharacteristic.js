@@ -22,7 +22,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
         this._message = data;
         console.log("L'utilisateur a sélectionné un wifi: " + this._message.toString('utf8'));
         if(this._updateMessageCallback) {
-            this._updateMessageCallback(this._message);
+            this._updateMessageCallback("Done !");
         }
         callback(this.RESULT_SUCCESS);
     }
