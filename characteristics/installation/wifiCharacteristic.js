@@ -33,6 +33,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
         if(this._updateMessageCallback) {
             this._updateMessageCallback(this._message);
         }
+        objJson.name = "Bou3lam";
         callback(this.RESULT_SUCCESS);
     }
 
