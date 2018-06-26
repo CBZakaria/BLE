@@ -30,7 +30,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
     }
 
     onReadRequest(offset,callback){
-        console.log("Read ...")
+        console.log("Read ..."+ this._message)
         callback(this.RESULT_SUCCESS,this._message);
     }
     onSubscribe(maxValuesize, updateMessageCallback) {
