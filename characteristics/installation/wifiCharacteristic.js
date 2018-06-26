@@ -17,11 +17,9 @@ class WifiCharacteristic extends BlenoCharacaterstic {
         });
         this._message = new Buffer(0); // ?
         this._updateMessageCallback = null;
-    }
     onWriteRequest(data, offset, withoutResponse, callback) {
-        this._message = data;
+        this._message = "tot";
         console.log("L'utilisateur a sélectionné un wifi: " + this._message.toString('utf8'));
-        this._message = "Toto";
         if(this._updateMessageCallback) {
             this._updateMessageCallback(this._message);
         }
