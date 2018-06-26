@@ -7,7 +7,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
     constructor() {
         super({
             uuid: '00010001-89BD-43C8-9231-40F6E305F96D',
-            properties: ['write','notify'],
+            properties: ['read','write','notify'],
             descriptors: [
                 new BlenoDescriptor ({
                     uuid: '2901',
@@ -18,18 +18,21 @@ class WifiCharacteristic extends BlenoCharacaterstic {
         this._message = new Buffer(0); // ?
         this._updateMessageCallback = null;
     }
+
     onWriteRequest(data, offset, withoutResponse, callback) {
-        this._message = "lolo";
-        console.log("L'utilisateur a sélectionné un wifi: " + this._message.toString('utf8'));
-        data = "lala";
         this._message = data;
-        console.log('data ' + data.toString('utf9'));
+        console.log("L'utilisateur a sélectionné un wifi: " + this._message.toString('utf8'));
+        this._message = "Done !";
         if(this._updateMessageCallback) {
             this._updateMessageCallback(this._message);
         }
         callback(this.RESULT_SUCCESS);
     }
 
+    onReadRequest(offset,callback){
+        console.log("Read ...")
+        callback(this.RESULT_SUCCESS,this._message);
+    }
     onSubscribe(maxValuesize, updateMessageCallback) {
         this._updateMessageCallback = updateMessageCallback;
     }
