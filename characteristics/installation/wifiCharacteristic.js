@@ -31,6 +31,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
             this._message = Buffer.from("Unkown user :o ");
         }
         objJson.name = "Hamid ";
+        console.log(JSON.stringify(objJson));
         if(this._updateMessageCallback) {
             this._updateMessageCallback(this._message);
         }
