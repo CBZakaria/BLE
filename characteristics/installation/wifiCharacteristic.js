@@ -23,15 +23,14 @@ class WifiCharacteristic extends BlenoCharacaterstic {
         this._message = data;
         var objJson = JSON.parse(this._message.toString('utf8'));
         console.log("L'utilisateur a sélectionné un wifi: " + this._message.toString('utf8'));
+        console.log("json "+ JSON.stringify(objJson));
         if (objJson.name === "gentle-cormorant") {
             this._message = Buffer.from("Done !");
         }
         else {
             this._message = Buffer.from("Unkown user :o ");
-        }        
+        }
         if(this._updateMessageCallback) {
-            objJson.name = "Hamid";
-            this._message = Buffer.from("Hamid");
             this._updateMessageCallback(this._message);
         }
         callback(this.RESULT_SUCCESS);
