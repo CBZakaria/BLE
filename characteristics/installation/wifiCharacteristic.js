@@ -22,7 +22,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
     onWriteRequest(data, offset, withoutResponse, callback) {
         this._message = data;
         var objJson = JSON.parse(this._message.toString('utf8'));
-        console.log("name " + objJson.name);
+        console.log("start cron " + objJson.start.cron);
         console.log("L'utilisateur a sélectionné un wifi: " + this._message.toString('utf8'));
         this._message = Buffer.from("Done !");
         if(this._updateMessageCallback) {
@@ -32,7 +32,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
     }
 
     onReadRequest(offset,callback){
-        console.log("Read ..."+ this._message)
+        console.log("Read ... "+ this._message)
         callback(this.RESULT_SUCCESS,this._message);
     }
     onSubscribe(maxValuesize, updateMessageCallback) {
