@@ -23,7 +23,7 @@ class ConfigurationCharacterstic extends BlenoCharacteristic {
         this._message = data;
         console.log("L'utilisateur a envoyé une configuration du Player R: " + this._message.toString('utf8'));
         if(this._updateMessageCallback) {
-            this._updateMessageCallback("Done !");
+            this._updateMessageCallback(this._message);
         }
         callback("Done !");
     }
