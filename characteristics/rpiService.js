@@ -5,9 +5,8 @@ var BlenoPrimaryService = bleno.PrimaryService;
 var WifiCharacteristic = require('./installation/wifiCharacteristic');
 var ConfigurationCharacteristic = require('./installation/configurationCharacteristic');
 var PlayerCharacteristic = require('./maintaining/playerCharacteristic');
-var wifiChara = new WifiCharacteristic();
-var configchara = new ConfigurationCharacteristic();
-var playerChara = new PlayerCharacteristic();
+var GithubWifiCharac = require('./installation/githubWifiCharac');
+
 
 class RPIService extends BlenoPrimaryService {
     constructor() {
@@ -15,6 +14,7 @@ class RPIService extends BlenoPrimaryService {
             uuid: '00010010-89BD-43C8-9231-40F6E305F96D',
             characteristics: [
                 new WifiCharacteristic(),
+                new GithubWifiCharac(),
                 new ConfigurationCharacteristic(),
                 new PlayerCharacteristic()
             ]
