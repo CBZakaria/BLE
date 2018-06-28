@@ -42,6 +42,7 @@ class WifiCharacteristic extends BlenoCharacaterstic {
     }
     onSubscribe(maxValuesize, updateMessageCallback) {
         this._updateMessageCallback = updateMessageCallback;
+        callback(this._updateMessageCallback);
     }
     onUnsubscribe() {
         this._updateMessageCallback = null;
